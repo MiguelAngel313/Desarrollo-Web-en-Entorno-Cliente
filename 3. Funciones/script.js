@@ -104,4 +104,9 @@ const aprendiendo3 = modulo => {
 
 const element=document.getElementById("titulo");
 
-element.addEventListener("mouseover")
+element.addEventListener("mouseover", ()=>{
+  element.classList.add("verde")
+})
+element.addEventListener("mouseout", ()=>{
+  element.classList.remove("verde")
+})

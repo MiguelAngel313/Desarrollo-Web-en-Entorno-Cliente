@@ -1,0 +1,11 @@
+.darkMode{color: white;
+background-color: black;}
+.lightMode{color: black;
+background-color: white;}
+
+.cuadrado{width: 100px;
+height: 100px;
+position: relative;
+top: 10px;
+left: 10px;
+background-color: red;}
