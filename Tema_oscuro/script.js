@@ -28,16 +28,30 @@ document.body.appendChild(boton);
 const div=document.getElementById("cuadrado")
 div.classList.add("cuadrado")
 
+let topPos=0;
+let leftPos=0;
+
 document.addEventListener('keydown',(e) =>{
     
     switch (e.key) {
         case "ArrowUp":
-            
+            topPos -= 10;
+            break;
+        case "ArrowDown":
+            topPos += 10;
+            break;
+        case "ArrowLeft":
+            leftPos -= 10;
+            break;
+        case "ArrowRight":
+            leftPos += 10;
             break;
     
         default:
             break;
     }
+    div.style.top= topPos+"px";
+    div.style.left=`${leftPos}px`;
 })
 
 
