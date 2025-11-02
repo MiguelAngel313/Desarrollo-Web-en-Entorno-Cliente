@@ -1,0 +1,78 @@
+/* Buena práctica en CSS: mantener los selectores lo menos específicos posibles */
+
+button.send {
+  background-color: green;
+}
+
+button.cancel {
+  background-color: red;
+}
+
+
+/* -> COMBINADOR UNIVERSAL */
+/* 	Selecciona todos los elementos (cualquier nivel). */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* -> COMBINADOR DESCENDIENTE */
+/* Selecciona elementos dentro de otros (cualquier nivel). */
+
+#main #part-1 h1{
+  color: red;
+}
+
+#main #part-1 h1,
+#main #part-1 p{
+  color: green;
+}
+
+/* -> COMBINADOR HIJO */
+/* Selecciona elementos hijos directos (primer nivel). */
+
+/* Elementos hijos de cualquier nivel */
+#main div{
+  border: 1px solid purple;
+}
+
+/* Sólo elementos hijos directos*/
+#main > div{
+  border: 1px solid purple;
+}
+
+/* -> COMBINADOR HERMANO ADYACENTE */
+/* Selecciona elementos contiguos a otros (mismo nivel) */
+
+#options ul li:first-child{
+  background: rgb(249, 183, 194);
+}
+
+#options ul li:first-child + li{
+  background: rgb(192, 203, 255);
+}
+
+#options ul li:first-child + li + li{
+  background: rgb(155, 244, 149);
+}
+
+/* -> COMBINADOR HERMANO GENERAL */
+/* Selecciona elementos que siguen a otros (mismo nivel) */
+
+#options ul li:last-child ~ li{
+  background: rgb(192, 203, 255);
+}
+
+
+/* Selecciona todos los div hijos */
+#main>div{
+  border: 1px solid purple;
+}
+
+/* Selecciona el primer elemento */
+#main>:first-child {
+  background: orange;
+}
+
+

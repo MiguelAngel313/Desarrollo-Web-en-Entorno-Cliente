@@ -1,0 +1,13 @@
+table{
+  border: 1px solid black;
+}
+
+td, th{
+  border: 1px solid black;
+}
+
+ul{
+  list-style-type: lower-latin;
+    list-style-position: inside;
+    list-style-image: url("https://picsum.photos/10/10");
+}
