@@ -13,4 +13,21 @@ div{
     border-radius: 0.7em;
     margin-top: 5em;
     box-shadow: 4px 4px 10px gray;
+    padding: 5em;
+}
+
+div:hover{
+    transform: scale(1.10);
+}
+
+div button{
+    font-size: xx-large;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 0.2em;
+}
+
+.dark{
+    background-color: black;
+    color: white;
 }

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="panel.css">
+    <script src="script.js" defer></script>
     <title>Panel de Usuario</title>
 </head>
-<body>
-    <div>
+<body id="temaBody" class="light">
+    <div id="tema" class="light">
         <h1>Bienvenido</h1>
-        <form action="./index.html" method="get">
-            <input type="submit" value="Cerrar sesión">
-        </form>
+        <button onclick="alternarClases()">Cambiar tema</button>
+        <button>Cerrar sesión</button>
     </div>
 </body>
 </html>
