@@ -1,0 +1,25 @@
+.tarjeta{
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    text-align: center;
+    background-color: gray;
+    width: 20vw;
+    font-size: 1rem;
+    box-shadow: 4px 4px 4px black;
+    border-radius: 0.7em;
+    cursor: pointer;
+    margin-top: 25vh;
+}
+
+.tarjeta:hover{
+    transform: scale(1.18);
+}
+
+.tarjeta img{
+    transition: all 0.3s ease;
+    width: 15vw;
+}
+.tarjeta:hover{
+    transform: scale(1.18);
+    transform: scale(1.18);
+}
