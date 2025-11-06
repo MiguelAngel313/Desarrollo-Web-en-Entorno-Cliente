@@ -19,11 +19,11 @@ div{
 }
 
 div:hover{
-    transform: scale(1.10);
+    transform: scale(1.01);
 }
 
 div input{
-    font-size: x-large;
+    font-size: xx-large;
     margin: 10px;
     width: 25vw;
     border-radius: 0.2em;

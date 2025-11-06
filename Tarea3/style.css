@@ -20,7 +20,7 @@ div{
 }
 
 div:hover{
-    transform: scale(1.10);
+    transform: scale(1.01);
 }
 
 div input{
