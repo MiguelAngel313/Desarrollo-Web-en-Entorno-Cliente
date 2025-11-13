@@ -1,3 +1,4 @@
+//Cambiar estilo de pagina
 function alternarClases() {
     const elemento = document.getElementById("tema");
     if (elemento) {
