@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="registro.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="registro.css" />
     <script src="validacion.js" defer></script>
     <title>Registro</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <h1>Registro</h1>
-        <form action="./index.html" method="get" id="formulario">
-            <input id="user" type="text" placeholder="Usuario" required> <br>
-            <span class="error"></span> <br>
-            <input id="passwd" type="password" placeholder="Contraseña" required> <br>
-            <span class="error"></span>
-             <br>
-            <input id="tlf" type="text" placeholder="Teléfono"> <br>
-                <span class="error"></span>
-            <br>
-            <input id="passwd2" type="password" placeholder="Repetir contraseña" required> <br>
-                <span class="error"></span>
-            <br>
-            <input id="mayor" type="checkbox" style="width: 1vw;"> Soy mayor de edad <br>
-            <input id="edad" type="text" placeholder="Edad" style="width: 5vw;"> <br>
-            <input type="submit" value="Crear cuenta" class="crear">
-        </form>
-        <a href="./index.html">¿Ya tienes una cuenta? Inicia sesión</a>
+      <h1>Registro</h1>
+      <form action="./index.html" method="get" id="formulario">
+        <span class="error">
+          <input id="usuario" type="text" placeholder="Usuario" required /> <br />
+        </span>
+        <span class="error">
+          <input
+            id="passwd"
+            type="password"
+            placeholder="Contraseña"
+            required
+          />
+          <br />
+        </span>
+        <span class="error">
+          <input id="tlf" type="text" placeholder="Teléfono" /> <br />
+        </span>
+        <span class="error">
+          <input
+            id="passwd2"
+            type="password"
+            placeholder="Repetir contraseña"
+            required
+          />
+          <br />
+        </span>
+        <input id="mayor" type="checkbox" style="width: 1vw" /> Soy mayor de
+        edad <br />
+        <span class="error">
+          <input id="edad" type="text" placeholder="Edad" style="width: 5vw" />
+          <br />
+        </span>
+        <input type="submit" value="Crear cuenta" class="crear" />
+      </form>
+      <a href="./index.html">¿Ya tienes una cuenta? Inicia sesión</a>
     </div>
-</body>
+  </body>
 </html>
