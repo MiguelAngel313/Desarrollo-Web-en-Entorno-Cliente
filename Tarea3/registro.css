@@ -5,6 +5,7 @@ body{
 }
 
 #edad{display: none;}
+#mayor{cursor: pointer;}
 
 .formulario{
     transition: all 0.3s ease;
@@ -32,6 +33,11 @@ div input{
 }
 .crear{
     cursor: pointer;
+}
+
+label{
+    color: black;
+    font-size: x-large;
 }
 
 .error{
