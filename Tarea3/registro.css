@@ -6,7 +6,7 @@ body{
 
 #edad{display: none;}
 
-div{
+.formulario{
     transition: all 0.3s ease;
     margin: 0 auto;
     background-color: aliceblue;
@@ -20,7 +20,7 @@ div{
     box-shadow: 4px 4px 10px gray;
 }
 
-div:hover{
+.formulario:hover{
     transform: scale(1.01);
 }
 
@@ -32,4 +32,9 @@ div input{
 }
 .crear{
     cursor: pointer;
+}
+
+.error{
+    font-size: medium;
+    color: orangered;
 }

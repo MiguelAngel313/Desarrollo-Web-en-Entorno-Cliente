@@ -8,15 +8,15 @@
     <title>Registro</title>
   </head>
   <body>
-    <div>
+    <div class="formulario">
       <h1>Registro</h1>
       <form action="./index.html" method="get" id="formulario">
+        <div class="error">
+          <input id="usuario" type="text" placeholder="Usuario" required />
+          <br />
+        </div>
 
-        <span class="error">
-          <input id="usuario" type="text" placeholder="Usuario" required /> <br />
-        </span>
-
-        <span class="error">
+        <div class="error">
           <input
             id="passwd"
             type="password"
@@ -24,12 +24,13 @@
             required
           />
           <br />
-        </span>
-        
-        <span class="error">
-          <input id="tlf" type="text" placeholder="Teléfono" /> <br />
-        </span>
-        <span class="error">
+        </div>
+
+        <div class="error">
+          <input id="tlf" type="tel" placeholder="Teléfono"/> <br />
+        </div>
+
+        <div class="error">
           <input
             id="passwd2"
             type="password"
@@ -37,13 +38,17 @@
             required
           />
           <br />
-        </span>
-        <input id="mayor" type="checkbox" style="width: 1vw" /> Soy mayor de
-        edad <br />
-        <span class="error">
+        </div>
+
+        <div class="error">
+          <input id="mayor" type="checkbox" style="width: 1vw" /> Soy mayor de
+          edad <br />
+        </div>
+
+        <div class="error">
           <input id="edad" type="text" placeholder="Edad" style="width: 5vw" />
           <br />
-        </span>
+        </div>
         <input type="submit" value="Crear cuenta" class="crear" />
       </form>
       <a href="./index.html">¿Ya tienes una cuenta? Inicia sesión</a>
