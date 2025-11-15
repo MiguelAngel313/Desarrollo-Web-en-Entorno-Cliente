@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="inicio.css">
+    <script src="login.js" defer></script>
     <title>inicio</title>
 </head>
 <body>
     
-    <div>
+    <div class="login">
         <h1>Iniciar sesión</h1>
-        <form action="./panel.html" method="get">
-            <input type="text" placeholder="Usuario" required> <br>
-            <input type="password" placeholder="Contraseña" required> <br>
+        <form method="get" id="formulario">
+            <input id="usuario" type="text" placeholder="Usuario" required> <br>
+            <input id="passwd" type="password" placeholder="Contraseña" required>
+            <button id="ver" type="button">👀</button>
+            <br>
             <input type="submit" value="Entrar" class="entrar">
         </form>
         <a href="./index.html">Registrarse</a>

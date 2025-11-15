@@ -5,7 +5,7 @@ body{
 }
 
 
-div{
+div.login{
     transition: all 0.3s ease;
     margin: 0 auto;
     background-color: aliceblue;
@@ -19,11 +19,11 @@ div{
     box-shadow: 4px 4px 10px gray;
 }
 
-div:hover{
+div.login:hover{
     transform: scale(1.01);
 }
 
-div input{
+div.login input{
     font-size: xx-large;
     margin: 10px;
     width: 25vw;
@@ -34,4 +34,17 @@ div input{
 
 .entrar{
     cursor: pointer;
+}
+
+button{
+    font-size: xx-large;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+}
+
+button#ver:hover{
+    scale: 1.2;
 }
