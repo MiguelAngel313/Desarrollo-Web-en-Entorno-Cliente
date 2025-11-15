@@ -61,8 +61,8 @@ passwd2.addEventListener('change', f =>{
     if (passwd2.value != passwd.value) {
         if (contador == 0) {
             mostrarError(passwd2, 'Las contraseñas no coinciden!');
-            contador=1;
         }
+        contador=1;
     }else{
         contador = 0;
         mostrarSuccess(passwd2);
