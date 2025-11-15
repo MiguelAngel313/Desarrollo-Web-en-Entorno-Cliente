@@ -44,3 +44,16 @@ label{
     font-size: medium;
     color: orangered;
 }
+
+button{
+    font-size: xx-large;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+}
+
+button#ver:hover{
+    scale: 1.2;
+}

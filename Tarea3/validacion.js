@@ -1,9 +1,11 @@
+let formulario = document.getElementById('formulario');
 let usuario = document.getElementById('usuario');
 let passwd = document.getElementById('passwd');
 let telefono = document.getElementById('tlf');
 let passwd2 = document.getElementById('passwd2');
 let check = document.getElementById('mayor');
 let edad = document.getElementById('edad');
+let ver = document.getElementById('ver');
 let contador = 0;
 
 //Control de errores en el campo de usuario
@@ -90,6 +92,38 @@ edad.addEventListener('change', f=>{
     }
 })
 
+//Mostrar y ocultar contraseña
+ver.addEventListener('click', f=>{
+    if (passwd.type == 'password') {
+        passwd.type = 'text';
+        passwd2.type = 'text';
+        ver.textContent = '🙈';
+    }else{
+        passwd.type = 'password';
+        passwd2.type = 'password';
+        ver.textContent = '👀';
+    }
+});
+
+//Almacenar usuario en local Storage
+formulario.addEventListener('submit', f=>{
+    f.preventDefault();
+    if (todoCompleto() && !localStorage.getItem(usuario.value)) {
+        let usuarioObj = {
+            nombre: usuario.value,
+            contrasenia: passwd.value,
+            telefono: telefono.value,
+            edad: check.checked ? edad.value : '', //si está marcado, se guarda la edad, si no, se guarda una cadena vacía
+        }
+        localStorage.setItem(usuario.value, JSON.stringify(usuarioObj));
+        alert('Registro completado con éxito!');
+        window.location.href = 'inicio.html';
+    }
+    else{
+        alert('El nombre de usuario introducido ya existe!');
+    }
+});
+
 //Funciones adicionales para muestreo de mensajes y validaciones
 function mostrarError(elemento, mensaje){
     let elementoPadre = elemento.parentElement;
@@ -114,3 +148,10 @@ function tieneMayusculaYMinuscula(palabra) {
 function soloNumeros(cadena) {
     return /^\d+$/.test(cadena);
 }
+
+function todoCompleto(){
+    if (usuario.value.length == 0 || passwd.value.length == 0 || passwd2.value.length == 0 || telefono.value.length == 0 || (check.checked && edad.value.length == 0)) {
+        return false;
+    }
+    return true;
+};
