@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="panel.css">
-    <script src="cambiarTema.js" defer></script>
+    <script src="panel.js" defer></script>
     <title>Panel de Usuario</title>
 </head>
 <body id="temaBody" class="light">
     <div id="tema" class="light">
-        <h1>Bienvenido</h1>
+        <h1 id="bienvenida">Bienvenido</h1>
         <button onclick="alternarClases()">Cambiar tema</button>
-        <a href="./inicio.html"><button>Cerrar sesión</button></a>
+        <button id="cerrarSesion">Cerrar sesión</button>
     </div>
 </body>
 </html>

@@ -32,7 +32,8 @@ formulario.addEventListener('submit', f => {
         // Verificar si la contraseña es correcta
         if (datosUsuario.contrasenia === passwdValor) {
             // Guardar usuario en cookie (opcional)
-            document.cookie = `usuario=${usuarioValor}; path=/`;
+            // Guardar usuario en cookie por 1 día
+            setCookie('usuario', usuarioValor, 1);
             
             // Redirigir al panel
             window.location.href = './panel.html';
@@ -45,3 +46,14 @@ formulario.addEventListener('submit', f => {
         alert('Usuario o contraseña incorrectos!');
     }
 });
+
+//Esta funcion crea un usuario y le da una cookie por 1 dia en este caso
+// name es el nombre de la cookie
+// value es el valor de la cookie
+// dias es la duracion de la cookie en dias
+function setCookie (name, value, dias){
+	const fecha = new Date();
+	fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
+	let expira = "expires=" + fecha.toUTCString();
+	document.cookie = `${name}=${value}; ${expira}; path=/;`;
+};
