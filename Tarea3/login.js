@@ -21,8 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Evento para el botón de aceptar cookies
 aceptar.addEventListener('click', () => {
-    // Guardar la aceptación en una cookie por 365 días (1 año)
-    setCookie('cookiesAceptadas', 'true', 365);
+    // Guardar la aceptación en una cookie por 1 día
+    setCookie('cookiesAceptadas', 'true', 1);
     
     // Ocultar el banner
     banner.style.display = 'none';

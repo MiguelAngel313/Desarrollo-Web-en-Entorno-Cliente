@@ -4,10 +4,12 @@ let temaBtn = document.getElementById("temaBtn");
 let elemento = document.getElementById("tema");
 let aceptarCookies = getCookie("aceptarCookies") === "true";
 
-
+//Si el usuario acepta las cookies, se muestra la bienvenida y se comprueba el tema
 window.onload = function() {
-    mostrarBienvenida();
-    comprobarTema();
+    if (getCookie('cookiesAceptadas') === 'true') {
+        mostrarBienvenida();
+        comprobarTema();
+    }
 }
 
 function comprobarTema(){
