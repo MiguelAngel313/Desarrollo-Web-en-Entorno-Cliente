@@ -5,29 +5,28 @@ let ver = document.getElementById('ver');
 let banner = document.getElementById('banner');
 let aceptar = document.getElementById('aceptar');
 
-let aceptarCookies = getCookie("aceptarCookies") === "true";
-
-window.onload = function() {
-    if (aceptarCookies) {
+//Aceptar o no las cookies
+// Al cargar la página, verificar si ya se aceptaron las cookies
+window.addEventListener('DOMContentLoaded', () => {
+    let cookiesAceptadas = getCookie('cookiesAceptadas');
+    
+    if (cookiesAceptadas === 'true') {
+        // Si ya se aceptaron, ocultar el banner
         banner.style.display = 'none';
+    } else {
+        // Si no se han aceptado, mostrar el banner
+        banner.style.display = 'block';
     }
-}
-
-//Funcion para aceptar cookies
-aceptar.addEventListener('click', f =>{
-    aceptarCookies = true;
-    banner.style.display = 'none';
 });
 
-function guardarAceptar(){
-    if (aceptarCookies) {
-        setCookie('aceptarCookies', 'true', 1);
-        banner.style.display = 'none';
-    }
-    else{
-        setCookie('aceptarCookies', 'false', 1);
-    }
-}
+// Evento para el botón de aceptar cookies
+aceptar.addEventListener('click', () => {
+    // Guardar la aceptación en una cookie por 365 días (1 año)
+    setCookie('cookiesAceptadas', 'true', 365);
+    
+    // Ocultar el banner
+    banner.style.display = 'none';
+});
 
 // Mostrar y ocultar contraseña
 ver.addEventListener('click', f => {
@@ -57,11 +56,11 @@ formulario.addEventListener('submit', f => {
         
         // Verificar si la contraseña es correcta
         if (datosUsuario.contrasenia === passwdValor) {
-            // Guardar usuario en cookie (opcional)
-            // Guardar usuario en cookie por 1 día
-            if (aceptarCookies) {
+            // Guardar usuario en cookie por 1 día en caso de que se hayan aceptado las cookies
+            if (getCookie('cookiesAceptadas') === 'true') {
                 setCookie('usuario', usuarioValor, 1);
             }
+            
             
             // Redirigir al panel
             window.location.href = './panel.html';
@@ -85,3 +84,15 @@ function setCookie (name, value, dias){
 	let expira = "expires=" + fecha.toUTCString();
 	document.cookie = `${name}=${value}; ${expira}; path=/;`;
 };
+
+function getCookie(name) {
+    const cookies = document.cookie.split('; ');
+    
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split('=');
+        if(cookieName === name){
+            return decodeURIComponent(cookieValue);
+        }
+    }
+    return null;
+}
