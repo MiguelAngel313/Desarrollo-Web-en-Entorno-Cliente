@@ -61,6 +61,7 @@ button#ver:hover{
     background-color: aliceblue;
     border-radius: 0.7em;
     transition: all 0.2s ease-in-out;
+    box-shadow: 4px 4px 10px gray;
 }
 
 #banner:hover{
