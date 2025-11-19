@@ -2,6 +2,32 @@ let formulario = document.getElementById('formulario');
 let usuario = document.getElementById('usuario');
 let passwd = document.getElementById('passwd');
 let ver = document.getElementById('ver');
+let banner = document.getElementById('banner');
+let aceptar = document.getElementById('aceptar');
+
+let aceptarCookies = getCookie("aceptarCookies") === "true";
+
+window.onload = function() {
+    if (aceptarCookies) {
+        banner.style.display = 'none';
+    }
+}
+
+//Funcion para aceptar cookies
+aceptar.addEventListener('click', f =>{
+    aceptarCookies = true;
+    banner.style.display = 'none';
+});
+
+function guardarAceptar(){
+    if (aceptarCookies) {
+        setCookie('aceptarCookies', 'true', 1);
+        banner.style.display = 'none';
+    }
+    else{
+        setCookie('aceptarCookies', 'false', 1);
+    }
+}
 
 // Mostrar y ocultar contraseña
 ver.addEventListener('click', f => {
@@ -33,7 +59,9 @@ formulario.addEventListener('submit', f => {
         if (datosUsuario.contrasenia === passwdValor) {
             // Guardar usuario en cookie (opcional)
             // Guardar usuario en cookie por 1 día
-            setCookie('usuario', usuarioValor, 1);
+            if (aceptarCookies) {
+                setCookie('usuario', usuarioValor, 1);
+            }
             
             // Redirigir al panel
             window.location.href = './panel.html';

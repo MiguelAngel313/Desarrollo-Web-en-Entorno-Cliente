@@ -2,6 +2,7 @@ let bienvenida = document.getElementById("bienvenida");
 let cerrarSesion = document.getElementById("cerrarSesion");
 let temaBtn = document.getElementById("temaBtn");
 let elemento = document.getElementById("tema");
+let aceptarCookies = getCookie("aceptarCookies") === "true";
 
 
 window.onload = function() {
@@ -10,6 +11,9 @@ window.onload = function() {
 }
 
 function comprobarTema(){
+    if (!aceptarCookies) {
+        return;
+    }
     if (getCookie("tema") === "light") {
         elemento.classList.add("light");
         document.body.classList.add("light");
@@ -32,8 +36,10 @@ cerrarSesion.addEventListener("click", function() {
 //Mostrar mensaje de vienvenida con el nombre de usuario
 function mostrarBienvenida() {
     // Obtener el valor de la cookie "usuario"
+    if (!aceptarCookies) {
+        return;
+    }
     const usuario = getCookie("usuario");
-    console.log(usuario);
     if (usuario) {
         // Mostrar mensaje de bienvenida con el nombre de usuario
         bienvenida.textContent = `Bienvenido, ${usuario}`;
